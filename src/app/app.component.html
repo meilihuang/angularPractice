@@ -1,4 +1,25 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h1>Let's PLAY</h1>
+
+<div *ngFor="let row of [0,1,2,3,4]">
+	<span *ngFor="let star of board[row]; let column=index">
+    <a>{{star}} </a>
+  </span>
+</div>
+
+<br>
+
+<!-- check player's turn starts -->
+<ng-template *ngIf="player1; then templatetrue; else templatefalse"></ng-template>
+
+<ng-template #templatetrue>
+	<b>PLAYER 1 TURN</b><br><br>
+</ng-template>
+
+	<ng-template #templatefalse>
+		<b>PLAYER 2 TURN</b><br><br>
+</ng-template>
+		<!-- check player's turn ends -->
+
+		Input Row : <input type="text" [(ngModel)]="row"><br>
+Input Col : <input type="text" [(ngModel)]="column"><br>
+		<button (click)="Process()">SUBMIT</button>
