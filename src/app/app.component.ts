@@ -6,8 +6,7 @@ import { Component, VERSION } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-
-//Initialization
+  //Initialization
   board = [
     ["*", "*", "*", "*", "*"],
     ["*", "*", "*", "*", "*"],
@@ -20,6 +19,7 @@ export class AppComponent {
   row = 0;
   column = 0;
 
+  //Function 
   Process() {
     //Player 1 
     if (this.player1) {
